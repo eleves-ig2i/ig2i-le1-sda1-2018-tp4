@@ -1,0 +1,61 @@
+
+Partie 1 :
+
+"Question 1 : strcpy"
+La bibliothèque à inclure est string.h.
+Cette fonction renvoie un pointeur sur la chaîne dest. Quant à la chaîne source qui est aussi pointée, elle doit rester constante pendant l'utilisation de la fonction.
+On retrouve au final la même déclaration de fonction que celle donnée par le sujet.
+
+
+"Question 2 : bcopy"
+Attention ! la bibliothèque à inclure est strings.h et pas string.h !
+La fonction bcopy ne renvoie rien. A l'instar de strcpy, c'est la chaine dest qui est modifiée. En effet, elle copie une séquence d'octets (n octets) de source vers dest.	
+
+
+"Question 3 : gcc"
+Le rôle du paramètre "-E" dans la compilation est de faire que le preprocessing, c'est-à-dire insérer les fonctions des bibliothèques utilisées dans les fichiers.
+Un fichier ".i" n'est pas influencé par le préprocessing. Les étapes réalisées par les fichiers -i sont les étapes 3,5 et 6 c'est-à-dire la compilation, l'édition d'un lien et création d'un exécutable.
+
+
+"Question 4 : déclaration de fonctions"
+cf module1.c
+
+
+
+
+
+Partie 3 :
+
+
+Question 3 : Compilation séparée
+Cette compilation conditionnelle est utile dans la construction d'une bibliothèque dans un fichier 
+.h, ainsi les erreurs de syntaxe sont les premières à être détectées.
+
+
+Question 4 : 
+On effectue la commande gcc -E chaines.c > chaines.i
+Le fichier chaines.i possède une structure analogue aux fichiers de bibliothèque comme stdio.h ou string.h
+
+Question 5 :
+On effectue la commande gcc chaines.i mainchaine.c -o main
+La compilation a été réussie, comme l'en atteste la présence du fichier main.
+
+
+
+
+
+
+Partie 4 :
+
+Question 4 :
+On effectue les mêmes commandes que dans la partie 3 et on obtient le fichier main2.
+
+
+
+Conclusion :
+La compilation séparée est utile dans le cadre de grands projets qui utilisent le langage C. En effet, on peut "diviser" les travaux en 2 parties :
+Une partie qui s'occupe du traitement de la bibliothèque utilisée dans le programme principal.
+L'autre partie qui s'occupe du traitement du programme principal en utilisant les fonctions issues de la bibliothèque concernée.
+
+
+
